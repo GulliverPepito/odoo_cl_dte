@@ -23,4 +23,8 @@ Siguiendo el enfoque de desarrollo ágil, con sprints semanales, se pretende imp
      - [ ] Libro de Compras
   - [ ] Recepción de DTE's de proveedores
 
+Desarrollado por
 
+![Faros Logo](http://farosinv.cl/wp-content/uploads/2016/03/logo_horizantal.png)
+
+http://www.farosinv.cl
