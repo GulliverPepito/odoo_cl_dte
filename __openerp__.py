@@ -1,17 +1,16 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "l10n_cl_dte",
+    'name': "Odoo - Generación de Documentos Tributarios Electrónicos Chile",
 
     'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
+        Emisión de documentos tributarios electrónicos de acuerdo a la legislación Chilena.""",
 
     'description': """
-        Long description of module's purpose
+        Módulos para la emisión de documentos tributarios electrónicos Chile.
     """,
 
-    'author': "My Company",
-    'website': "http://www.yourcompany.com",
+    'author': "Faros Inversiones Ltda.",
+    'website': "http://www.farosinv.cl",
 
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/master/openerp/addons/base/module/module_data.xml
@@ -27,6 +26,7 @@
         # 'security/ir.model.access.csv',
         'views/views.xml',
         'views/templates.xml',
+        'reports/dte_cl_paperformats.xml'
     ],
     # only loaded in demonstration mode
     'demo': [
