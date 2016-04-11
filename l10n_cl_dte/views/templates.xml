@@ -1,5 +1,77 @@
 <openerp>
     <data>
+        <template id="dte_report_header">
+                <style type="text/css">
+
+                    /* table starts here */
+                    
+                    #head_table {
+                    width:100%;
+                    height:60px;
+                    padding:0px;
+                    display: table;
+                    }
+                    #row  {
+                    display: table-row;
+                    }
+                    #logo {
+                    width:20%;
+                    display: table-cell;
+                    margin-top:20px;
+                    }
+                    #DTE_type {
+                    width:40%;
+                    padding:0px;
+                    display: table-cell;
+                    text-align: center;
+                    justify-content: center;
+                    border: 0px solid black;
+                    color:#FF0000;
+                    }
+                    #company_data {
+                    width: 40%;
+                    display: table-cell;
+                    margin-top: -10px; 
+                    }
+                    
+                 .dte_type{
+                 border: 5px solid #FF0000;
+
+                 width:90%;
+                 margin: 0 auto;
+                 background-color:#FFFFFF;
+                 color:#FF0000;
+                 font-size: 20px;
+                 font-weight: bold;
+                 text-align: center;
+                 }
+                   }                
+            </style>
+
+                <div id="head_table">
+                    <div id="row">
+                        <div id="logo">
+                            <img t-att-src="'data:image/png;base64,%s' % res_company.logo" style="border:auto;width:100px;height:100px;"/>
+                        </div>
+                        <div id="company_data">
+	                        <span style="font-weight:bold;color:#000000;letter-spacing:1pt;word-spacing:2pt;font-size:18px;text-align:left;font-family:verdana, sans-serif;line-height:1;" t-esc="res_company.name"/><br/>
+	                        <span t-esc="res_company.street"/><br/>
+	                        <span t-esc="res_company.city"/>, <span t-esc="res_company.country_id.name"/><br/>
+	                        <span t-esc="res_company.email"></span>
+	                        <span t-esc="res_company.website"></span>
+                        </div>
+                        <div id="DTE_type">
+                        <div class="dte_type">
+	                        <p>R.U.T: <span t-esc="res_company.vat"/></p>
+	                        <p>FACTURA ELECTRONICA</p>
+	                        <p>N˚<span t-field="o.number"></span></p>
+                        </div>
+	                        <p>S.I.I. Arica</p>
+                        </div>
+                    </div>
+                   </div>
+
+        </template>
         <!-- <template id="listing"> -->
         <!--   <ul> -->
         <!--     <li t-foreach="objects" t-as="object"> -->

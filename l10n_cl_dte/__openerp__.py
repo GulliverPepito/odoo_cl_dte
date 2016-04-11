@@ -19,14 +19,18 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': [
+                'base',
+                'base_vat',
+                ],
 
     # always loaded
     'data': [
         # 'security/ir.model.access.csv',
         'views/views.xml',
         'views/templates.xml',
-        'reports/dte_cl_paperformats.xml'
+        'reports/dte_factura_afecta.xml',
+#        'reports/dte_cl_paperformats.xml'
     ],
     # only loaded in demonstration mode
     'demo': [
