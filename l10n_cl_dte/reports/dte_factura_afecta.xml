@@ -13,32 +13,32 @@
 					
 					#table_client_data {
 					width: 100%;
-					padding:10px;
+					padding:5px;
+					padding-left:10px;
 					display: table;
+					font-size:12px;
 					border: 1px solid black;
 					}
 					#row  {
 					display: table-row;
 					}
 					#data {
-					width:20%;
-					padding:0px;
+					width:15%;
 					border: 0px solid black;
 					display: table-cell;
 					font-weight:bold;
 					}
+                    #values {
+                    width: 40%;
+                    border: 0px solid black;
+                    display: table-cell;
+                    }
 					#right {
 					width:150px;
-					padding:0px;
 					display: table-cell;
 					border: 0px solid black;
 					}
-					#values {
-					padding:0px;
-					width: 40%;
-					border: 0px solid black;
-					display: table-cell;
-					}
+
 
 
 					.tablecorner{
@@ -61,7 +61,7 @@
 						 : <span t-field="o.partner_id.name"></span>
 						</div>
 						<div id="right">
-						column3
+						Fecha
 						</div>
 						</div>
 						<div id="row">
@@ -72,7 +72,7 @@
 						: <span t-field="o.partner_id.vat"></span>
 						</div>
 						<div id="right">
-						Lorem ipsum dolor sit amet
+						<span t-field="o.date_invoice" t-field-options='{"format": "long"}'></span>
 						</div>
 						</div>
 						<div id="row">
@@ -80,7 +80,7 @@
 						 Giro
 						</div>
 						<div id="values">
-						 : $GIRO
+						 : <span t-field="o.invoice_turn"></span>
 						</div>
 						<div id="right">
 						 
