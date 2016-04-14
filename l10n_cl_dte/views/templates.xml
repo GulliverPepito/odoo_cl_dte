@@ -71,7 +71,7 @@
                             <p>N˚<span t-field="o.number"></span></p>
                             </t>
                         </div>
-	                        <p>S.I.I. Arica</p>
+	                        <p>S.I.I. <span t-esc="res_company.sii_office"/></p>
                         </div>
                     </div>
                    </div>
