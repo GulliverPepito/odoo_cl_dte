@@ -1,0 +1,58 @@
+<openerp>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="l10n_cl_rut.view">
+      <field name="name">formated.vat</field>
+      <field name="model">res.partner</field>
+      <field name="inherit_id" ref="base.view_partner_form"></field>
+      <field name="arch" type="xml">
+          <field name="function" position="before">
+            <field name="formated_vat"></field>
+          </field>
+      </field>
+    </record>
+
+
+    <!-- actions opening views on models -->
+    <!--
+    <record model="ir.actions.act_window" id="l10n_cl_rut.action_window">
+      <field name="name">l10n_cl_rut window</field>
+      <field name="res_model">l10n_cl_rut.l10n_cl_rut</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    -->
+
+    <!-- server action to the one above -->
+    <!--
+    <record model="ir.actions.server" id="l10n_cl_rut.action_server">
+      <field name="name">l10n_cl_rut server</field>
+      <field name="model_id" ref="model_l10n_cl_rut_l10n_cl_rut"/>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": self._name,
+        }
+      </field>
+    </record>
+    -->
+
+    <!-- Top menu item -->
+    <!--
+    <menuitem name="l10n_cl_rut" id="l10n_cl_rut.menu_root"/>
+    -->
+    <!-- menu categories -->
+    <!--
+    <menuitem name="Menu 1" id="l10n_cl_rut.menu_1" parent="l10n_cl_rut.menu_root"/>
+    <menuitem name="Menu 2" id="l10n_cl_rut.menu_2" parent="l10n_cl_rut.menu_root"/>
+    -->
+    <!-- actions -->
+    <!--
+    <menuitem name="List" id="l10n_cl_rut.menu_1_list" parent="l10n_cl_rut.menu_1"
+              action="l10n_cl_rut.action_window"/>
+    <menuitem name="Server to list" id="l10n_cl_rut" parent="l10n_cl_rut.menu_2"
+              action="l10n_cl_rut.action_server"/>
+    -->
+  </data>
+</openerp>

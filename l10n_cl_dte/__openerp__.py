@@ -22,6 +22,10 @@
     'depends': [
                 'base',
                 'base_vat',
+                'l10n_cl_rut'
+                'l10n_cl_dte_paperformat',
+                'l10n_cl_partner_activities',
+                'l10n_cl',
                 ],
 
     # always loaded

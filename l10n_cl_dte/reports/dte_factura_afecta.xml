@@ -69,7 +69,7 @@
 						R.U.T.
 						</div>
 						<div id="values">
-						: <span t-field="o.partner_id.vat"></span>
+						: <span t-field="o.partner_id.formated_vat"></span>
 						</div>
 						<div id="right">
 						<span t-field="o.date_invoice" t-field-options='{"format": "long"}'></span>
