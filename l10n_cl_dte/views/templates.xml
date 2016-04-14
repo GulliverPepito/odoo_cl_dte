@@ -54,7 +54,7 @@
                             <div><img t-att-src="'data:image/png;base64,%s' % res_company.logo" style="border:auto;width:80%;"/></div>
                         </div>
                         <div id="company_data">
-	                        <span style="font-weight:bold;color:#000000;letter-spacing:1pt;word-spacing:2pt;font-size:18px;text-align:left;font-family:verdana, sans-serif;line-height:1;" t-esc="res_company.name"/><br/>
+	                        <span style="font-weight:bold;color:#000000;letter-spacing:1pt;word-spacing:2pt;font-size:18px;text-align:left;font-family:verdana, sans-serif;line-height:1;" t-esc="res_company.razon_social_dte"/><br/>
                             <span t-esc="res_company.partner_id.partner_activities_ids.name"/><br/>
 	                        <span t-esc="res_company.street"/><br/>
 	                        <span t-esc="res_company.state_id.name"/>, <span t-esc="res_company.country_id.name"/><br/>
