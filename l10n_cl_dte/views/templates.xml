@@ -1,99 +1,99 @@
 <openerp>
-    <data>
-        <template id="dte_report_header">
-                <style type="text/css">
+	<data>
+		<template id="dte_report_header">
+			<style type="text/css">
 
-                    /* table starts here */
-                    
-                    #head_table {
-                    width:100%;
-                    padding:0px;
-                    display: table;
-                    }
-                    #row  {
-                    display: table-row;
-                    }
-                    #logo {
-                    width:15%;
-                    display: table-cell;
-                    margin-top:0px;
-                    }
-                    #DTE_type {
-                    width:40%;
-                    padding:0px;
-                    display: table-cell;
-                    text-align: center;
-                    border: 0px solid black;
-                    color:#FF0000;
-                    }
-                    #company_data {
-                    width: 40%;
-                    font-size:12px;
-                    display: table-cell;
+				/* table starts here */
 
-                    }
-                    
-                 .dte_type{
-                 border: 3px solid #FF0000;
+				#head_table {
+				width:100%;
+				padding:0px;
+				display: table;
+				}
+				#row {
+				display: table-row;
+				}
+				#logo {
+				width:15%;
+				display: table-cell;
+				margin-top:0px;
+				}
+				#DTE_type {
+				width:40%;
+				padding:0px;
+				display: table-cell;
+				text-align: center;
+				border: 0px solid black;
+				color:#FF0000;
+				}
+				#company_data {
+				width: 40%;
+				font-size:12px;
+				display: table-cell;
 
-                 width:90%;
-                 margin: 0 auto;
-                 padding:10px;
-                 background-color:#FFFFFF;
-                 color:#FF0000;
-                 font-size: 16px;
-                 font-weight: bold;
-                 text-align: center;
-                 }
-                   }                
-            </style>
+				}
 
-                <div id="head_table">
-                    <div id="row">
-                        <div id="logo">
-                            <div><img t-att-src="'data:image/png;base64,%s' % res_company.logo" style="border:auto;width:80%;"/></div>
-                        </div>
-                        <div id="company_data">
-	                        <span style="font-weight:bold;color:#000000;letter-spacing:1pt;word-spacing:2pt;font-size:18px;text-align:left;font-family:verdana, sans-serif;line-height:1;" t-esc="res_company.razon_social_dte"/><br/>
-                            <span t-esc="res_company.partner_id.partner_activities_ids.name"/><br/>
-	                        <span t-esc="res_company.street"/><br/>
-	                        <span t-esc="res_company.state_id.name"/>, <span t-esc="res_company.country_id.name"/><br/>
-	                        <span t-esc="res_company.email"></span>
-	                        <span t-esc="res_company.website"></span>
-                        </div>
-                        <div id="DTE_type">
-                        <div class="dte_type">
-	                        <p>R.U.T: <span t-esc="res_company.vat"/></p>
-	                        <t t-if="o.invoice_line_ids">
-	                           <p>FACTURA ELECTRONICA</p>
-	                        </t>
-                            <t t-if="o.invoice_line_ids">
-                            <p>N˚<span t-field="o.number"></span></p>
-                            </t>
-                        </div>
-	                        <p>S.I.I. <span t-esc="res_company.sii_office"/></p>
-                        </div>
-                    </div>
-                   </div>
+				.dte_type{
+				border: 3px solid #FF0000;
 
-        </template>
-        <!-- <template id="listing"> -->
-        <!--   <ul> -->
-        <!--     <li t-foreach="objects" t-as="object"> -->
-        <!--       <a t-attf-href="#{ root }/objects/#{ object.id }"> -->
-        <!--         <t t-esc="object.display_name"/> -->
-        <!--       </a> -->
-        <!--     </li> -->
-        <!--   </ul> -->
-        <!-- </template> -->
-        <!-- <template id="object"> -->
-        <!--   <h1><t t-esc="object.display_name"/></h1> -->
-        <!--   <dl> -->
-        <!--     <t t-foreach="object._fields" t-as="field"> -->
-        <!--       <dt><t t-esc="field"/></dt> -->
-        <!--       <dd><t t-esc="object[field]"/></dd> -->
-        <!--     </t> -->
-        <!--   </dl> -->
-        <!-- </template> -->
-    </data>
+				width:90%;
+				margin: 0 auto;
+				padding:10px;
+				background-color:#FFFFFF;
+				color:#FF0000;
+				font-size: 16px;
+				font-weight: bold;
+				text-align: center;
+				}
+				}
+			</style>
+
+			<div id="head_table">
+				<div id="row">
+					<div id="logo">
+						<div>
+							<img t-att-src="'data:image/png;base64,%s' % res_company.logo"
+								style="border:auto;width:80%;" />
+						</div>
+					</div>
+					<div id="company_data">
+						<span
+							style="font-weight:bold; color:#000000; letter-spacing:1pt; word-spacing:2pt; font-size:18px; text-align:left; font-family:verdana, sans-serif; line-height:1;"
+							t-esc="res_company.razon_social_dte" />
+						<br />
+						<span t-esc="res_company.partner_id.partner_activities_ids.name" />
+						<br />
+						<span t-esc="res_company.street" />
+						<br />
+						<span t-esc="res_company.state_id.name" />
+						,
+						<span t-esc="res_company.country_id.name" />
+						<br />
+						<span t-esc="res_company.email"></span>
+						<span t-esc="res_company.website"></span>
+					</div>
+					<div id="DTE_type">
+						<div class="dte_type">
+							<p>
+								R.U.T:
+								<span t-esc="res_company.vat" />
+							</p>
+							<t t-if="o.invoice_line_ids">
+								<p>FACTURA ELECTRONICA</p>
+							</t>
+							<t t-if="o.invoice_line_ids">
+								<p>
+									N˚ <span t-field="o.number"></span>
+								</p>
+							</t>
+						</div>
+						<p>
+							S.I.I. <span t-esc="res_company.sii_office" />
+						</p>
+					</div>
+				</div>
+			</div>
+		</template>
+
+	</data>
 </openerp>

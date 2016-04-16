@@ -27,6 +27,7 @@
                 'l10n_cl_dte_paperformat',
                 'l10n_cl_partner_activities',
                 'l10n_cl',
+
                 ],
 
     # always loaded
@@ -35,6 +36,7 @@
         'views/views.xml',
         'views/templates.xml',
         'reports/dte_factura_afecta.xml',
+        'data/l10n_cl_toponyms_data.xml'
 #        'reports/dte_cl_paperformats.xml'
     ],
     # only loaded in demonstration mode

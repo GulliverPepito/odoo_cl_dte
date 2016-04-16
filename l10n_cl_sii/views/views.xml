@@ -21,5 +21,17 @@
       </field>
     </record>
 
+    <record model="ir.ui.view" id="l10n_cl_sii.view">
+      <field name="name">sii.partner</field>
+      <field name="model">res.partner</field>
+      <field name="inherit_id" ref="base.view_partner_form"></field>
+      <field name="arch" type="xml">
+            <field name="website" position="after">
+                <field name="dte_receptor"/>
+                <field name="dte_partner_email"/>
+            </field>
+      </field>
+    </record>
+    
   </data>
 </openerp>

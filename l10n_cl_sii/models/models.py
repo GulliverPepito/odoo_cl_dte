@@ -37,3 +37,14 @@ class company_sii_data(models.Model):
                            help = 'Indicar número de resolución y año')
     
     
+class partner_sii_data(models.Model):
+    _description = 'Partner DTE information'
+    _inherit = 'res.partner'
+    
+    dte_receptor = fields.Boolean(string = 'Receptor DTE?', help = 'Partner es receptor DTE?')
+    
+    dte_partner_email = fields.Char(
+                                    string = 'Email receptor DTE',
+                                    store = True,
+                                    size = 30,
+                                    help = 'Correo electrónico para recepción de DTE')
