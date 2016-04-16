@@ -27,6 +27,7 @@
                 'l10n_cl_dte_paperformat',
                 'l10n_cl_partner_activities',
                 'l10n_cl',
+                'base_state_ubication',
 
                 ],
 

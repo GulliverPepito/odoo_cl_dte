@@ -65,7 +65,7 @@
 						<br />
 						<span t-esc="res_company.street" />
 						<br />
-						<span t-esc="res_company.state_id.name" />
+						<span t-esc="res_company.city" />
 						,
 						<span t-esc="res_company.country_id.name" />
 						<br />

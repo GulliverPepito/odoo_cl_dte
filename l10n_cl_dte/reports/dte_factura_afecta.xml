@@ -140,7 +140,7 @@
 										</div>
 										<div id="values">
 											:
-											<span t-field="o.partner_id.city"></span>
+											<span t-field="o.partner_id.state_id.name"></span>
 										</div>
 										<div id="right">
 
