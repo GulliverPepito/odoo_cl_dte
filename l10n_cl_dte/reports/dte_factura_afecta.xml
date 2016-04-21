@@ -194,13 +194,50 @@
 								</table>
 							</div>
 							<br></br>
+
+							
 							<!--  Totales e impuestos -->
 							<div style="display: table; width:100%; height:100px;">
+							    <h5>PAGOS:</h5>
 							    <div style="display: table-row;">
-							        <div style="display: table-cell; width:50%; text-align: center; vertical-align: center;">
-							        <p>Data</p>
+
+							        <div style="display: table-cell; width:50%; text-align: center; vertical-align: center; padding:5px;">
+							                                 <!-- Pagos -->
+ 
+				                            <div class="datagrid">
+				                                <table>
+				                                    <thead>
+				                                        <tr>
+				                                            <th style="width:5%;">Id.</th>
+				                                            <th style="width:20%;">Fecha de pago</th>
+				                                            <th style="width:20%;">Método</th>
+				                                            <th>Monto</th>
+				                                        </tr>
+				                                    </thead>
+				                                    <tbody>
+				                                    <t t-foreach="o.payment_ids" t-as="p">
+				                                        <t t-if="p_odd">
+				                                        <tr class="alt">
+				                                            <td><span t-esc="p_index + 1"/></td>
+				                                            <td><span t-field="p.payment_date"/></td>
+				                                            <td><span t-field="p.journal_id.name"/></td>
+				                                            <td><span t-field="p.amount" t-field-options='{"widget": "monetary", "display_currency": "statement.currency_id"}'/></td>
+				                                        </tr>
+				                                        </t>
+				                                        <t t-if="p_even">
+				                                        <tr>
+				                                            <td class="alt"><span t-esc="p_index + 1"/></td>
+				                                            <td><span t-field="p.payment_date"/></td>
+				                                            <td><span t-field="p.journal_id.name"/></td>
+				                                            <td><span t-field="p.amount" t-field-options='{"widget": "monetary", "display_currency": "statement.currency_id"}'/></td>
+				                                        </tr>
+				                                        </t> 
+				                                    </t>
+				                                    </tbody>
+				                                </table>
+				                            </div>
 							        </div>
-							        <div style="display: table-cell; width:50%; vertical-align: top;">
+							        <div style="display: table-cell; width:50%; vertical-align: top; padding:5px;">
 							        <div class="tabletotals"><table>
 										<tbody><tr><td style="text-align:right;font-weight: bold;">Total Neto </td><td> <span t-field="o.amount_untaxed" t-field-options='{"widget": "monetary", "display_currency": "statement.currency_id"}'/> </td></tr>
 										<tr><td style="text-align:right;font-weight: bold;">Descuento Global</td><td><span t-field="o.amount_discount" t-field-options='{"widget": "monetary", "display_currency": "statement.currency_id"}'/></td></tr>
