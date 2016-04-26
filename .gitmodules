@@ -5,3 +5,6 @@
 [submodule "sale_global_discount"]
 	path = sale_global_discount
 	url = https://github.com/farosinv/sale_global_discount.git
+[submodule "l10n_cl_inv_related_documents"]
+	path = l10n_cl_inv_related_documents
+	url = https://github.com/farosinv/l10n_cl_inv_related_documents.git
