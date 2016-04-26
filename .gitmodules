@@ -2,3 +2,6 @@
 	path = l10n_cl_partner_activities
 	url = https://github.com/odoo-chile/l10n_cl_partner_activities
 	branch = 9.0
+[submodule "sale_global_discount"]
+	path = sale_global_discount
+	url = https://github.com/farosinv/sale_global_discount.git
