@@ -75,8 +75,7 @@
 					<div id="DTE_type">
 						<div class="dte_type">
 							<p>
-								R.U.T:
-								<span t-esc="res_company.vat" />
+								R.U.T: <span t-esc="res_company.vat" />
 							</p>
 							<t t-if="o.invoice_line_ids">
 								<p>FACTURA ELECTRONICA</p>
