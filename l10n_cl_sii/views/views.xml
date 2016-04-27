@@ -1,8 +1,8 @@
 <openerp>
   <data>
     
-    <record model="ir.ui.view" id="l10n_cl_sii.view">
-      <field name="name">sii_config</field>
+    <record model="ir.ui.view" id="l10n_cl_sii.company_view">
+      <field name="name">sii_config.company</field>
       <field name="model">res.company</field>
       <field name="inherit_id" ref="base.view_company_form"></field>
       <field name="arch" type="xml">
@@ -21,7 +21,7 @@
       </field>
     </record>
 
-    <record model="ir.ui.view" id="l10n_cl_sii.view">
+    <record model="ir.ui.view" id="l10n_cl_sii.partner_view">
       <field name="name">sii.partner</field>
       <field name="model">res.partner</field>
       <field name="inherit_id" ref="base.view_partner_form"></field>

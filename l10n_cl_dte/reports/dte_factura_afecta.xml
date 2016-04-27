@@ -223,7 +223,7 @@
 							</div>
 							
 							<!--  Totales e impuestos -->
-							<div style="display: table; width:100%; height:100px;padding-top:10px;">
+							<div style="display: table; width:100%; height:100px;padding-top:15px;">
 							    <div style="display: table-row;">
 
 							        <div style="display: table-cell; width:60%; text-align: center; vertical-align: center; padding-right:5px;">
@@ -255,6 +255,12 @@
 				                                    </tbody>
 				                                </table>
 				                            </div>
+				                            <!-- Timbre S.I.I -->
+				                         <div style="display: table-cell; width:50%; text-align: center; vertical-align: center;padding:10px;">    
+                                            <img class="img img-responsive" src="/l10n_cl_dte/static/src/img/timbre_test.png"/>
+                                            <p>Timbre Electrónico S.I.I.</p>
+                                            <p><span t-field="res_company.res_date"></span> Verifique en www.sii.cl</p>
+                                        </div>
 							        </div>
 							        <div style="display: table-cell; width:40%; vertical-align: top; padding-left:5px;">
 							        <div class="tabletotals"><table>
@@ -279,21 +285,8 @@
 							</div>
 							<!-- Fin totales -->
 							
-							<!-- Timbre S.I.I y Acuse de recibo -->
 							
-						<div style="display: table; width:100%; height:100px;padding-top:10px;">
-                                <div style="display: table-row;">
 
-                                    <div style="display: table-cell; width:50%; text-align: center; vertical-align: center; padding-right:5px;">	
-							             <img class="img img-responsive" src="/l10n_cl_dte/static/src/img/timbre_test.png"/>
-							             <p>Timbre Electrónico S.I.I.</p>
-							             <p>Resolución XX del YYYY</p>
-							        </div>
-							         
-							         <div style="display: table-cell; width:40%; vertical-align: top; padding-left:5px;">
-							         </div>
-							     </div>
-							</div>
 					</div>
 				</t>
 			</t>
