@@ -78,7 +78,7 @@
 								R.U.T: <span t-esc="res_company.vat" />
 							</p>
 							<t t-if="o.invoice_line_ids">
-								<p>FACTURA ELECTRONICA</p>
+								<p>FACTURA ELECTRONICA <t t-if="o.factura_exenta">EXENTA</t></p>
 							</t>
 							<t t-if="o.invoice_line_ids">
 								<p>
