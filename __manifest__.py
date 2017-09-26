@@ -16,6 +16,8 @@
         'base_vat',
     ],
     'data': [
+        'views/sii_res_partner.xml',
+        'views/sii_res_company.xml',
         'views/rut_validator.xml',
         'security/sii_partner_activities.xml',
         'views/sii_partner_activities.xml',

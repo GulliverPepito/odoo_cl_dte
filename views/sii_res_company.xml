@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2017 Faros Inversiones Ltda.
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+    <record model="ir.ui.view" id="sii_res_company_form_view">
+        <field name="name">sii.res_company.form (in odoo_cl_dte)</field>
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="base.view_company_form"></field>
+        <field name="arch" type="xml">
+            <notebook position="inside">
+                <page name="SII" string="SII">
+                    <group>
+                        <field name="razon_social_dte"/>
+                        <field name="legal_rep_name"/>
+                        <field name="emisor_dte"/>
+                        <field name="email_dte"/>
+                        <field name="res_date" placeholder="Res.101 de 2015"/>
+                        <field name="sii_office"/>
+                    </group>
+                </page>
+            </notebook>
+      </field>
+    </record>
+
+
+</odoo>
