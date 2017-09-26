@@ -119,7 +119,7 @@
         <field name="inherit_id" ref="base.view_partner_form"/>
         <field name="model">res.partner</field>
         <field name="arch" type="xml">
-            <field name="email" position="after">
+            <field name="formated_vat" position="after">
                 <field name="partner_activities_ids"
                     placeholder="Giros del Partner" widget="many2many_tags"
                     options="{'no_create': True}"

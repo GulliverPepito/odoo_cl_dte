@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2017 Faros Inversiones Ltda.
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+    <record model="ir.ui.view" id="odoo_cl_dte.rut_validator_formview">
+      <field name="name">formated.vat</field>
+      <field name="model">res.partner</field>
+      <field name="inherit_id" ref="base.view_partner_form"></field>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='type']" position='after'>
+            <field name="formated_vat"></field>
+        </xpath>
+      </field>
+    </record>
+
+
+</odoo>

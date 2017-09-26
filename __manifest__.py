@@ -13,8 +13,10 @@
     'depends': [
         'base',
         'account',
+        'base_vat',
     ],
     'data': [
+        'views/rut_validator.xml',
         'security/sii_partner_activities.xml',
         'views/sii_partner_activities.xml',
         'data/partner.activities.csv',
