@@ -3,7 +3,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 {
-    'name': 'Odoo Cl Dte',
+    'name': 'Odoo CL DTE',
     'description': """
         Documentos tributarios electrónicos con Odoo, de acuerdo a la legislación chilena.""",
     'version': '10.0.1.0.0',
@@ -11,6 +11,8 @@
     'author': 'Faros Inversiones Ltda.',
     'website': 'www.farosinv.cl',
     'depends': [
+        'base',
+        'account',
     ],
     'data': [
         'security/sii_partner_activities.xml',
