@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2017 Faros Inversiones Ltda.
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+    <!-- Acount invoice -->
+
+    <record model="ir.ui.view" id="invoice_turn_form_view">
+            <field name="name">account.invoice.turn.form</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_form" /> </odoo>
+            <field name="arch" type="xml">
+                <field name='partner_id' position="after">
+                    <field name="invoice_turn"
+                           domain="[('partner_ids', '=', partner_id)]"
+                           invisible="False"
+                           options="{'no_quick_create': True, 'no_create_edit': True}"
+                    />
+                    <field name="activity_description"
+                            placeholder="Glosa descriptiva" options="{'no_edit': True}" invisible="True"/>
+                </field>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="invoice_supplier_turn_form_view">
+            <field name="name">account.invoice.supplier.turn.form</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_supplier_form"/>
+            <field name="arch" type="xml">
+                <field name='partner_id' position="after">
+                    <field name="invoice_turn"
+                           domain="[('partner_ids', '=', partner_id)]"
+                           invisible="False"
+                           options="{'no_quick_create': True, 'no_create_edit': True}"
+                    />
+                    <field name="activity_description"
+                            placeholder="Glosa descriptiva" options="{'no_edit': True}" invisible="True"/>
+                </field>
+            </field>
+
+    <!-- PArtner Activities -->
+
+     <record model="ir.ui.view" id="activity_search_view">
+         <field name="name">activity.search</field>
+         <field name="model">partner.activities</field>
+         <field name="arch" type="xml">
+             <search>
+                  <field name="code"/>
+                  <field name="name"/>
+             </search>
+         </field>
+     </record>
+    <record id="view_partner_activities_form" model="ir.ui.view">
+        <field name="name">partner.activities.form</field>
+        <field name="model">partner.activities</field>
+        <field name="arch" type="xml">
+            <form string="SII Economic Activities">
+                <group>
+                    <field name="code"/>
+                    <field name="parent_id"/>
+                    <field name="name"/>
+                    <field name="vat_affected"/>
+                    <field name="tax_category"/>
+                    <field name="internet_available"/>
+                    <field name="active"/>
+                </group>
+            </form>
+        </field>
+    </record>
+    <record id="view_partner_activities_tree" model="ir.ui.view">
+        <field name="name">partner.activities.tree</field>
+        <field name="model">partner.activities</field>
+        <field name="arch" type="xml">
+            <tree string="SII Economic Activities">
+                <field name="code"/>
+                <field name="parent_id"/>
+                <field name="name"/>
+                <field name="vat_affected"/>
+                <field name="tax_category"/>
+                <field name="internet_available"/>
+            </tree>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="act_partner_activities">
+        <field name="name">SII Partner Activities</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">partner.activities</field>
+        <field name="view_type">form</field>
+        <!-- <field name="view_mode">tree,form</field>-->
+    </record>
+    <menuitem name="SII Partner Activities" action="act_partner_activities" id="menu_action_act_partner_activities" parent="menu_sii_config"/>
+
+    <!-- Res Company -->
+
+    <record model="ir.ui.view" id="view_company_activity_inherit_form">
+            <field name="name">res.company.activities.form.inherit</field>
+            <field name="inherit_id" ref="base.view_company_form"/>
+            <field name="model">res.company</field> </odoo>
+            <field name="arch" type="xml">
+                <field name="vat" position="after">
+                    <field name="company_activities_ids"
+                        placeholder="Giros de la Compañía" widget="many2many_tags"
+                        options="{'no_create': True}" domain="[('parent_id', '>=', 1)]"/>
+                    <field name="activity_description"
+                            placeholder="Glosa descriptiva" required="True"/>
+                </field>
+            </field>
+        </record>
+
+
+    <!-- Res PArtner -->
+
+    <record model="ir.ui.view" id="view_partner_activity_inherit_form">
+        <field name="name">res.partner.activities.form.inherit</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="model">res.partner</field>
+        <field name="arch" type="xml">
+            <field name="email" position="after">
+                <field name="partner_activities_ids"
+                    placeholder="Giros del Partner" widget="many2many_tags"
+                    options="{'no_create': True}"
+                    domain="[('parent_id', '>=', 1)]"
+                    invisible="False"/>
+                <field name="activity_description" invisible="True"/>
+            </field>
+        </field>
+    </record>
+
+
+    <!-- sii activity description -->
+
+      <record model="ir.ui.view" id="activity_search_view">
+           <field name="name">activity.search</field>
+           <field name="model">sii.activity.description</field>
+           <field name="arch" type="xml">
+               <search>
+                    <field name="name"/>
+               </search>
+           </field>
+       </record>
+      <record id="view_sii_activity_description_form" model="ir.ui.view">
+          <field name="name">sii.activity.description.form</field>
+          <field name="model">sii.activity.description</field>
+          <field name="arch" type="xml">
+              <form string="SII Economic Activities">
+                  <group>
+                      <field name="name"/>
+                      <field name="vat_affected"/>
+                      <field name="active"/>
+                  </group>
+              </form>
+          </field>
+      </record>
+      <record id="view_sii_activity_description_tree" model="ir.ui.view">
+          <field name="name">sii.activity.description.tree</field>
+          <field name="model">sii.activity.description</field>
+          <field name="arch" type="xml">
+              <tree string="SII Economic Activities">
+                <field name="name"/>
+                <field name="vat_affected"/>
+                <field name="active"/>
+             </tree>
+          </field>
+      </record>
+
+
+    <menuitem
+                id="menu_sii_config"
+                name="SII Configuration"
+                parent="account.menu_finance_configuration"
+                sequence="25"/>
+
+</odoo>
