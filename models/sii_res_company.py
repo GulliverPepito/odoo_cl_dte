@@ -24,7 +24,8 @@ class SiiRes_company(models.Model):
                             size = 30,
                             help = 'Correo electrónico para recepción de DTE y respuestas del SII')
 
-    legal_rep_name = fields.Char(
+    representante_legal = fields.Many2one(
+                                'res.partner',
                                  string = 'Representante Legal',
                                  store = True,
                                  help = 'Nombre completo del Representante Legal de la empresa')

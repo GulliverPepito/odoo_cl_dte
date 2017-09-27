@@ -3,7 +3,8 @@
 # Based on works by @dansanti and @KonosCL on github
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from odoo import api, fields, models, _
+from odoo import api, fields, models
+
 
 class invoice_turn(models.Model):
     _inherit = "account.invoice"
@@ -30,9 +31,26 @@ class invoice_turn(models.Model):
         self.invoice_turn = self.set_partner_activity()
 
 
-#------------------------------------
+# ------------------------------------
+# ACTIVITIES DESCRIPTION
+# ------------------------------------
+
+class SiiActivities(models.Model):
+    _description = 'SII Economical Activities Printable Description'
+    _name = 'sii.activity.description'
+
+    name = fields.Char('Glosa', required=True, translate=True)
+    vat_affected = fields.Selection(
+        [('SI', 'Si'), ('NO', 'No'), ('ND', 'ND')], 'VAT Affected',
+        required=True, translate=True, default='SI')
+    active = fields.Boolean(
+        'Active', help="Allows you to hide the activity without removing it.",
+        default=True)
+
+
+# ------------------------------------
 # PARTNER ACTIVITIES
-#------------------------------------
+# ------------------------------------
 
 
 class PartnerActivities(models.Model):
@@ -68,6 +86,10 @@ class PartnerTurns(models.Model):
         string='Activities Names',
         help=u'Seleccione las actividades económicas registradas en el SII')
 
+    activity_description = fields.Many2one(
+        'sii.activity.description',
+        string='Glosa Giro', ondelete="restrict")
+
 
 class CompanyTurns(models.Model):
     _description = 'Company registered turns'
@@ -79,32 +101,6 @@ class CompanyTurns(models.Model):
         relation='partner.activities',
         help=u'Seleccione las actividades económicas registradas en el SII')
 
-
-
-#------------------------------------
-# ACTIVITIES DESCRIPTION
-#------------------------------------
-
-class PartnerActivities(models.Model):
-    _description = 'SII Economical Activities Printable Description'
-    _name = 'sii.activity.description'
-
-    name = fields.Char('Glosa', required=True, translate=True)
-    vat_affected = fields.Selection(
-        [('SI', 'Si'), ('NO', 'No'), ('ND', 'ND')], 'VAT Affected',
-        required=True, translate=True, default='SI')
-    active = fields.Boolean(
-        'Active', help="Allows you to hide the activity without removing it.",
-        default=True)
-
-class PartnerTurns(models.Model):
-    _inherit = 'res.partner'
-    activity_description = fields.Many2one(
-        'sii.activity.description',
-        string='Glosa Giro', ondelete="restrict")
-
-class CompanyTurns(models.Model):
-    _inherit = 'res.company'
     activity_description = fields.Many2one(
         string='Glosa Giro',
         related='partner_id.activity_description',
