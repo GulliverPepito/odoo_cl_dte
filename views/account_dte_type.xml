@@ -79,4 +79,16 @@
                 </xpath>
         </field>
     </record>
+
+    <record model="ir.ui.view" id="account_invoice_supplier_dte_type_form_view">
+        <field name="name">account.invoice_supplier.dte_type.form (in odoo_cl_dte)</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_supplier_form"/>
+        <field name="arch" type="xml">
+                <xpath expr="//field[@name='date_invoice']" position="after">
+                    <field name="dte_type" options="{'no_create': True}" invisible="False"/>
+                </xpath>
+        </field>
+    </record>
+
 </odoo>
