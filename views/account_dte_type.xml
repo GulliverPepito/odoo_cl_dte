@@ -1,0 +1,82 @@
+<!--     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+
+
+
+    <record model="ir.ui.view" id="account_dte_type_form_view">
+        <field name="name">account.dte_type.form (in odoo_cl_dte)</field>
+        <field name="model">account.dte_type</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="sii_code"/>
+                        <field name="odoo_code"/>
+                        <field name="model_id"/>
+                    </group>
+                </sheet>
+                <div class="oe_chatter"></div>
+            </form>
+        </field>
+    </record>
+
+
+
+
+    <record model="ir.ui.view" id="account_dte_type_search_view">
+        <field name="name">account.dte_type.search (in odoo_cl_dte)</field>
+        <field name="model">account.dte_type</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="sii_code"/>
+                <field name="odoo_code"/>
+                <field name="model_id"/>
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="account_dte_type_tree_view">
+        <field name="name">account.dte_type.tree (in odoo_cl_dte)</field>
+        <field name="model">account.dte_type</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="sii_code"/>
+                <field name="odoo_code"/>
+                <field name="model_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="account_dte_type_act_window">
+        <field name="name">account Dte_type</field> <!-- TODO -->
+        <field name="res_model">account.dte_type</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+    </record>
+
+    <record model="ir.ui.menu" id="account_dte_type_menu">
+        <field name="name">Account Dte_type</field>
+        <field name="parent_id" ref="menu_sii_config"/>
+        <field name="action" ref="account_dte_type_act_window"/>
+        <field name="sequence" eval="16"/>
+    </record>
+
+    <record model="ir.ui.view" id="account_invoice_dte_type_form_view">
+        <field name="name">account.invoice.dte_type.form (in odoo_cl_dte)</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_form"/>
+        <field name="arch" type="xml">
+                <xpath expr="//field[@name='date_invoice']" position="after">
+                    <field name="dte_type" options="{'no_create': True}" invisible="False"/>
+                </xpath>
+        </field>
+    </record>
+</odoo>

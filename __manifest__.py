@@ -12,16 +12,20 @@
     'website': 'www.farosinv.cl',
     'depends': [
         'base',
+        'sale_global_discount',
         'account',
         'base_vat',
     ],
     'data': [
+        'security/accout_dte_type.xml',
         'views/sii_res_partner.xml',
         'views/sii_res_company.xml',
         'views/rut_validator.xml',
         'security/sii_partner_activities.xml',
         'views/sii_partner_activities.xml',
+        'views/account_dte_type.xml',
         'data/partner.activities.csv',
+        'data/account.dte_type.csv',
     ],
     'demo': [
     ],

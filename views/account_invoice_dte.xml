@@ -1,0 +1,19 @@
+<odoo>
+
+    <record model="ir.ui.view" id="account_invoice_dte_type_form_view">
+        <field name="name">account.invoice.dte_type.form (in odoo_cl_dte)</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_form"/>
+        <field name="arch" type="xml">
+            <form>
+                <xpath expr="//field[@name='payment_mode_id']" position="after">
+                    <field name="dte_type"
+                        domain="[('dte_type.model_id', '=', 'account.invoice')]"
+                                                   invisible="False"
+                        />
+                </xpath>
+
+            </form>
+        </field>
+    </record>
+</odoo>
