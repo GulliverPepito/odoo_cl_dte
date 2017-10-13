@@ -81,6 +81,8 @@
         </field>
     </record>
 
+<!-- Agrega campos a facturas de proveedor -->
+
     <record model="ir.ui.view" id="account_invoice_supplier_dte_type_form_view">
         <field name="name">account.invoice_supplier.dte_type.form (in odoo_cl_dte)</field>
         <field name="model">account.invoice</field>
@@ -90,6 +92,54 @@
                     <field name="dte_type" options="{'no_create': True}" invisible="False"/>
                     <field name="dte_folio" invisible="False"/>
                 </xpath>
+        </field>
+    </record>
+
+<!-- Vistas de árbol -->
+
+    <record model="ir.ui.view" id="account_invoice_dte_type_tree_view">
+        <field name="name">account.invoice.dte_type.tree (in odoo_cl_dte)</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <field name="dte_type"/>
+                <field name="dte_folio" />
+            </xpath>
+
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="account_invoice_dte_type_search_view">
+        <field name="name">account.invoice.dte_type.search (in odoo_cl_dte)</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.view_account_invoice_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='number']" position="before">
+                <field name="dte_folio" string="Folio"
+                    invisible="False"
+                    filter_domain="['|','|','|',
+                    ('dte_folio','ilike',self),
+                    ('origin','ilike',self),
+                    ('reference', 'ilike', self),
+                    ('partner_id', 'child_of', self)]"
+                    />
+            </xpath>
+        </field>
+    </record>
+
+<!-- Agrega campos a vista arbol facturas de proveedores -->
+
+    <record model="ir.ui.view" id="account_invoice_supplier_dte_type_tree_view">
+        <field name="name">account.invoice_supplier.dte_type.tree (in odoo_cl_dte)</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_supplier_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <field name="dte_type"/>
+                <field name="dte_folio" />
+            </xpath>
+
         </field>
     </record>
 
