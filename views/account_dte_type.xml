@@ -76,6 +76,7 @@
         <field name="arch" type="xml">
                 <xpath expr="//field[@name='date_invoice']" position="after">
                     <field name="dte_type" options="{'no_create': True}" invisible="False"/>
+                    <field name="dte_folio" invisible="False"/>
                 </xpath>
         </field>
     </record>
@@ -87,6 +88,7 @@
         <field name="arch" type="xml">
                 <xpath expr="//field[@name='date_invoice']" position="after">
                     <field name="dte_type" options="{'no_create': True}" invisible="False"/>
+                    <field name="dte_folio" invisible="False"/>
                 </xpath>
         </field>
     </record>

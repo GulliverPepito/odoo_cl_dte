@@ -30,3 +30,9 @@ class Account_invoice(models.Model):
         string='Tipo de DTE',
         required=True
     )
+
+    dte_folio = fields.Char(
+        'Número de Folio',
+        required=True
+    )
+
