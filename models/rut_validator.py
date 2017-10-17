@@ -2,8 +2,12 @@
 # Copyright 2017 Faros Inversiones Ltda.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from odoo import api, fields, models, _
+from odoo import api, fields, models
 import re
+
+import logging
+
+_logger = logging.getLogger(__name__)
 
 class Rut_validator(models.Model):
 
@@ -46,3 +50,5 @@ class Rut_validator(models.Model):
         self.formated_vat = '%s.%s.%s-%s' % (
             formated_vat[0:2], formated_vat[2:5], formated_vat[5:8],
             formated_vat[-1])
+
+

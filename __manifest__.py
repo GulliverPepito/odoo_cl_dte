@@ -12,9 +12,10 @@
     'website': 'www.farosinv.cl',
     'depends': [
         'base',
+        'purchase',
         'sale_global_discount',
         'account',
-        'base_vat',
+       # 'base_vat',
     ],
     'data': [
         'security/accout_dte_type.xml',
@@ -29,4 +30,5 @@
     ],
     'demo': [
     ],
+    'application' : True,
 }
