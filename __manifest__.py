@@ -6,7 +6,7 @@
     'name': 'Odoo CL DTE',
     'description': """
         Documentos tributarios electrónicos con Odoo, de acuerdo a la legislación chilena.""",
-    'version': '10.0.1.0.0',
+    'version': '0.1.0-alpha',
     'license': 'AGPL-3',
     'author': 'Faros Inversiones Ltda.',
     'website': 'www.farosinv.cl',
